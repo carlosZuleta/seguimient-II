@@ -6,7 +6,7 @@ import java.util.List;
 public class Recipe {
 	private List<Ingredient> ingredients;
 	
-	public Recipe(String n, double w) {
+	public Recipe() {
 		ingredients = new ArrayList<Ingredient>();
 	}
 	
@@ -31,4 +31,19 @@ public class Recipe {
 	public List<Ingredient> getIngredients(){
 		return ingredients;
 	}
+	
+	public int findIngredient(String n) {
+		int flag = -1;
+		for(int i = 0; i< ingredients.size()&& flag == -1;i++) {
+			Ingredient ingre = ingredients.get(i);
+			if(ingre.getName().equals(n)) {
+				flag = i;
+			}
+		}
+		
+		return flag;
+	} 
+	
+	
+	
 }
